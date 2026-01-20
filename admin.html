@@ -427,20 +427,9 @@
         </div>
     </div>
 
-    <script type="module" src="js/admin.js"></script>
-    
-    <!-- Auth Protection -->
-    <script>
-        // Verificar autenticação ao carregar a página
-        (function() {
-            const user = localStorage.getItem('adminUser') || sessionStorage.getItem('adminUser');
-            
-            if (!user) {
-                // Não está logado, redirecionar para login
-                window.location.href = 'login.html';
-                return;
-            }
-        })();
-    </script>
+    <!-- Firebase Core (carrega assíncrono) -->
+    <script src="js/firebase-core.js"></script>
+    <script src="js/firebase-db.js"></script>
+    <script src="js/admin-firebase.js"></script>
 </body>
 </html>

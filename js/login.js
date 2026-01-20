@@ -44,53 +44,43 @@ async function handleLogin() {
     showLoading(true);
     
     try {
-        // Verificar se Firebase está configurado
-        if (typeof window.firebaseAuth === 'undefined') {
-            throw new Error('Firebase não está configurado. Aguarde alguns segundos e tente novamente.');
-        }
+        // CREDENCIAIS AUTORIZADAS (Modo Local - SEM Firebase)
+        const AUTHORIZED_EMAIL = 'sofia@essenceexclusive.com';
+        const AUTHORIZED_PASSWORD = 'qpaczm134679';
         
-        // Importar função de login
-        const { signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+        // Simular delay de autenticação
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
-        // Fazer login no Firebase
-        const userCredential = await signInWithEmailAndPassword(window.firebaseAuth, email, password);
-        const user = userCredential.user;
-        
-        // Salvar sessão
-        const userData = {
-            email: user.email,
-            uid: user.uid,
-            displayName: user.displayName || 'Admin'
-        };
-        
-        if (rememberMe) {
-            localStorage.setItem('adminUser', JSON.stringify(userData));
+        // Validar credenciais
+        if (email === AUTHORIZED_EMAIL && password === AUTHORIZED_PASSWORD) {
+            // Login bem-sucedido
+            const user = {
+                email: email,
+                uid: 'admin-sofia-local',
+                displayName: 'Sofia - Admin'
+            };
+            
+            // Salvar sessão
+            if (rememberMe) {
+                localStorage.setItem('adminUser', JSON.stringify(user));
+            } else {
+                sessionStorage.setItem('adminUser', JSON.stringify(user));
+            }
+            
+            showNotification('¡Bienvenida Sofia!', 'success');
+            
+            // Redirecionar para admin
+            setTimeout(() => {
+                window.location.href = 'admin.html';
+            }, 1000);
         } else {
-            sessionStorage.setItem('adminUser', JSON.stringify(userData));
+            // Credenciais inválidas
+            throw new Error('Email o contraseña incorrectos');
         }
-        
-        showNotification('¡Bienvenida! Login exitoso', 'success');
-        
-        // Redirecionar para admin
-        setTimeout(() => {
-            window.location.href = 'admin.html';
-        }, 1000);
         
     } catch (error) {
         console.error('Erro de login:', error);
-        let errorMessage = 'Email o contraseña incorrectos';
-        
-        if (error.code === 'auth/user-not-found') {
-            errorMessage = 'Usuario no encontrado';
-        } else if (error.code === 'auth/wrong-password') {
-            errorMessage = 'Contraseña incorrecta';
-        } else if (error.code === 'auth/invalid-email') {
-            errorMessage = 'Email inválido';
-        } else if (error.code === 'auth/too-many-requests') {
-            errorMessage = 'Muchos intentos fallidos. Intente más tarde.';
-        }
-        
-        showNotification(errorMessage, 'error');
+        showNotification(error.message || 'Email o contraseña incorrectos', 'error');
     } finally {
         showLoading(false);
     }
@@ -101,39 +91,12 @@ async function handleGoogleLogin() {
     showLoading(true);
     
     try {
-        if (typeof window.firebaseAuth === 'undefined' || typeof window.googleProvider === 'undefined') {
-            throw new Error('Firebase no está configurado');
-        }
-        
-        const { signInWithPopup } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
-        const result = await signInWithPopup(window.firebaseAuth, window.googleProvider);
-        const user = result.user;
-        
-        // Salvar sessão
-        const userData = {
-            email: user.email,
-            uid: user.uid,
-            displayName: user.displayName,
-            photoURL: user.photoURL
-        };
-        
-        localStorage.setItem('adminUser', JSON.stringify(userData));
-        
-        showNotification('Login con Google exitoso!', 'success');
-        
-        setTimeout(() => {
-            window.location.href = 'admin.html';
-        }, 1000);
+        // DESABILITADO NO MODO LOCAL
+        showNotification('Login con Google no disponible en modo local. Use: sofia@essenceexclusive.com', 'error');
         
     } catch (error) {
         console.error('Erro Google login:', error);
-        let errorMessage = 'Error al iniciar sesión con Google';
-        
-        if (error.code === 'auth/popup-closed-by-user') {
-            errorMessage = 'Ventana cerrada. Intente nuevamente.';
-        }
-        
-        showNotification(errorMessage, 'error');
+        showNotification('Login con Google no disponible', 'error');
     } finally {
         showLoading(false);
     }
@@ -235,7 +198,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('🔐 Login system initialized');
-console.log('🔥 Firebase Authentication ready');
-console.log('📧 Use: sofia@essenceexclusive.com');
+console.log('🔐 Login system initialized (LOCAL MODE)');
+console.log('📧 Email: sofia@essenceexclusive.com');
 console.log('🔑 Password: qpaczm134679');
+console.log('💾 Dados salvos em LocalStorage (sem sincronização)');
