@@ -565,7 +565,26 @@
         <span class="whatsapp-pulse"></span>
     </a>
 
-    <script src="js/main.js"></script>
+    <!-- Firebase Configuration -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-pWZ8CSQJURUAgfz9JSVerHGGkovZmbs",
+            authDomain: "essence-exclusive-a4252.firebaseapp.com",
+            projectId: "essence-exclusive-a4252",
+            storageBucket: "essence-exclusive-a4252.firebasestorage.app",
+            messagingSenderId: "608148583018",
+            appId: "1:608148583018:web:f394b1d511e31190d61013"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        window.firebaseDB = getFirestore(app);
+        console.log('🔥 Firebase initialized on index');
+    </script>
+
+    <script type="module" src="js/main-firebase.js"></script>
     <script src="js/cart.js"></script>
 </body>
 </html>

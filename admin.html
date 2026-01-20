@@ -427,7 +427,7 @@
         </div>
     </div>
 
-    <script src="js/admin.js"></script>
+    <script type="module" src="js/admin.js"></script>
     
     <!-- Auth Protection -->
     <script>
@@ -440,27 +440,7 @@
                 window.location.href = 'login.html';
                 return;
             }
-            
-            // Está logado, mostrar email do usuário
-            try {
-                const userData = JSON.parse(user);
-                const userEmailElement = document.getElementById('userEmail');
-                if (userEmailElement && userData.email) {
-                    userEmailElement.textContent = userData.email;
-                }
-            } catch (error) {
-                console.error('Error parsing user data:', error);
-            }
         })();
-        
-        // Botão de logout
-        document.getElementById('logoutBtn')?.addEventListener('click', () => {
-            if (confirm('¿Cerrar sesión?')) {
-                localStorage.removeItem('adminUser');
-                sessionStorage.removeItem('adminUser');
-                window.location.href = 'login.html';
-            }
-        });
     </script>
 </body>
 </html>
