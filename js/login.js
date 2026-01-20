@@ -44,17 +44,20 @@ async function handleLogin() {
     showLoading(true);
     
     try {
-        // MODO DEMO: Verificação básica sem Firebase
-        // Remova este bloco quando configurar o Firebase
-        if (email && password) {
-            // Simular delay de autenticação
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // Login de demonstração
+        // CREDENCIAIS AUTORIZADAS
+        const AUTHORIZED_EMAIL = 'sofia@essenceexclusive.com';
+        const AUTHORIZED_PASSWORD = 'qpaczm134679';
+        
+        // Simular delay de autenticação
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Validar credenciais
+        if (email === AUTHORIZED_EMAIL && password === AUTHORIZED_PASSWORD) {
+            // Login bem-sucedido
             const user = {
                 email: email,
-                uid: 'demo-user-id',
-                displayName: 'Admin Demo'
+                uid: 'admin-sofia',
+                displayName: 'Sofia - Admin'
             };
             
             // Salvar sessão
@@ -64,14 +67,15 @@ async function handleLogin() {
                 sessionStorage.setItem('adminUser', JSON.stringify(user));
             }
             
-            showNotification('Login realizado com sucesso!', 'success');
+            showNotification('¡Bienvenida Sofia!', 'success');
             
             // Redirecionar para admin
             setTimeout(() => {
                 window.location.href = 'admin.html';
             }, 1000);
         } else {
-            throw new Error('Por favor complete todos los campos');
+            // Credenciais inválidas
+            throw new Error('Email o contraseña incorrectos');
         }
         
         /* 
@@ -107,7 +111,7 @@ async function handleLogin() {
         
     } catch (error) {
         console.error('Erro de login:', error);
-        showNotification(getErrorMessage(error), 'error');
+        showNotification(error.message || 'Email o contraseña incorrectos', 'error');
     } finally {
         showLoading(false);
     }
@@ -118,8 +122,8 @@ async function handleGoogleLogin() {
     showLoading(true);
     
     try {
-        // MODO DEMO
-        showNotification('Firebase não configurado. Configure o Firebase para usar login com Google.', 'error');
+        // DESABILITADO NO MODO DEMO
+        showNotification('Login con Google no disponible. Use email: sofia@essenceexclusive.com', 'error');
         
         /*
         // CÓDIGO FIREBASE (descomente quando configurar)
@@ -253,5 +257,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 console.log('🔐 Login system initialized');
-console.log('📌 DEMO MODE: Use qualquer email/senha para testar');
+console.log('📧 Email: sofia@essenceexclusive.com');
+console.log('🔑 Password: qpaczm134679');
 console.log('🔥 Configure Firebase para produção');
