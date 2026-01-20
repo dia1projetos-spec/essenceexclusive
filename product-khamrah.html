@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khamrah - Olor a Poder | Essence Exclusive</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="product-page">
+    <!-- Header -->
+    <header class="header scrolled">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="header-info">
+                        <span><i class="fas fa-phone"></i> +54 9 11 1234-5678</span>
+                        <span><i class="fas fa-envelope"></i> contacto@essenceexclusive.com.ar</span>
+                    </div>
+                    <div class="header-links">
+                        <a href="admin.html"><i class="fas fa-user-shield"></i> Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-content">
+                    <div class="logo">
+                        <a href="index.html">
+                            <img src="assets/logo_essence2026.png" alt="Essence Exclusive">
+                        </a>
+                    </div>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html#home" class="nav-link">Inicio</a></li>
+                        <li><a href="index.html#products" class="nav-link">Productos</a></li>
+                        <li><a href="index.html#featured" class="nav-link">Destacados</a></li>
+                        <li><a href="index.html#about" class="nav-link">Nosotros</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <button class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                        <button class="menu-toggle" id="menuToggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Mi Carrito</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-price" id="totalPrice">$0.00</span>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar Compra</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Hero -->
+    <section class="product-hero">
+        <div class="product-hero-bg">
+            <img src="assets/khamrah-campaign.jpg" alt="Khamrah">
+            <div class="product-hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+                <span>/</span>
+                <a href="index.html#products">Productos</a>
+                <span>/</span>
+                <span>Khamrah</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Details -->
+    <section class="product-details">
+        <div class="container">
+            <div class="product-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img src="assets/khamrah-campaign.jpg" alt="Khamrah Body Mist" id="mainProductImage">
+                        <div class="image-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>EXCLUSIVO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-info-detail">
+                    <div class="product-category-badge">
+                        <i class="fas fa-mars"></i>
+                        Masculino Premium
+                    </div>
+                    
+                    <h1 class="product-name">Khamrah Body Mist</h1>
+                    <p class="product-tagline">Olor a Poder. Firma de Respeto.</p>
+                    
+                    <div class="product-rating-section">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(127 valoraciones)</span>
+                    </div>
+
+                    <div class="product-price-section">
+                        <span class="product-price-current">$145.000</span>
+                        <span class="product-price-old">$180.000</span>
+                        <span class="product-discount">-19% OFF</span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Sobre la Fragancia</h3>
+                        <p><strong>Khamrah</strong> es más que un perfume: es una declaración de poder y sofisticación. Inspirada en las tradiciones árabes de perfumería, combina notas orientales profundas con un toque moderno irresistible.</p>
+                        <p>Una fragancia que no pasa desapercibida. Dejá tu marca donde sea que vayas.</p>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Larga Duración</strong>
+                                <span>12+ horas</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-spray-can"></i>
+                            <div>
+                                <strong>Contenido</strong>
+                                <span>250ml</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions-section">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decreaseQty"><i class="fas fa-minus"></i></button>
+                            <input type="number" id="productQuantity" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" id="increaseQty"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <button class="btn-add-cart" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            AGREGAR AL CARRITO
+                        </button>
+                    </div>
+
+                    <div class="product-guarantee">
+                        <div class="guarantee-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Compra 100% Segura</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Envío Gratis en compras mayores a $50.000</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30 días de garantía</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5513981763452?text=Olá!%20Estou%20interessado%20no%20Khamrah" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-pulse"></span>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>
