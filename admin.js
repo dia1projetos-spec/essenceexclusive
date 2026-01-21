@@ -343,16 +343,12 @@ async function saveSlideForm() {
 async function deleteSlideConfirm() {
     showLoading(true);
     
-    try {
-        if (!window.firebaseDB) await window.initFirebaseApp();
-        
-        await window.firebaseDB.collection('slides').doc(deleteSlideId).delete();
-        console.log('✅ Slide eliminado:', deleteSlideId);
-        
+    const success = await window.FirebaseHelpers.deleteSlide(deleteSlideId);
+    
+    if (success) {
         showNotification('Slide eliminado con éxito', 'success');
         await refreshAllData();
-    } catch (error) {
-        console.error('Error al eliminar slide:', error);
+    } else {
         showNotification('Error al eliminar slide', 'error');
     }
     

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Limpar Firebase - Essence Exclusive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #d32f2f;
+        }
+        .success {
+            background: #4CAF50;
+        }
+        .success:hover {
+            background: #45a049;
+        }
+        #log {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log-line {
+            margin: 5px 0;
+        }
+        .error { color: #f44336; }
+        .success-msg { color: #4CAF50; }
+        .info { color: #2196F3; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🔥 Limpar Firebase</h1>
+        <p>Esta página limpa TODOS os slides do Firebase para você começar do zero.</p>
+        
+        <button onclick="deleteAllSlides()">🗑️ Deletar TODOS os Slides</button>
+        <button onclick="deleteAllProducts()" style="background:#ff9800;">🗑️ Deletar TODOS os Produtos</button>
+        <button onclick="location.href='admin.html'" class="success">✅ Ir para Admin</button>
+        
+        <div id="log"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-pWZ8CSQJURUAgfz9JSVerHGGkovZmbs",
+            authDomain: "essence-exclusive-a4252.firebaseapp.com",
+            projectId: "essence-exclusive-a4252",
+            storageBucket: "essence-exclusive-a4252.firebasestorage.app",
+            messagingSenderId: "608148583018",
+            appId: "1:608148583018:web:f394b1d511e31190d61013"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        
+        function log(msg, type = 'info') {
+            const logEl = document.getElementById('log');
+            const line = document.createElement('div');
+            line.className = 'log-line ' + type;
+            line.textContent = new Date().toLocaleTimeString() + ' - ' + msg;
+            logEl.appendChild(line);
+            logEl.scrollTop = logEl.scrollHeight;
+        }
+        
+        async function deleteAllSlides() {
+            if (!confirm('¿Estás seguro? Esto eliminará TODOS los slides.')) return;
+            
+            log('Iniciando eliminación de slides...', 'info');
+            
+            try {
+                const snapshot = await db.collection('slides').get();
+                
+                if (snapshot.empty) {
+                    log('No hay slides para eliminar', 'info');
+                    return;
+                }
+                
+                log(`Encontrados ${snapshot.size} slides`, 'info');
+                
+                let deleted = 0;
+                for (const doc of snapshot.docs) {
+                    await doc.ref.delete();
+                    deleted++;
+                    log(`Eliminado slide ${deleted}/${snapshot.size}`, 'success-msg');
+                }
+                
+                log('✅ TODOS los slides eliminados con éxito!', 'success-msg');
+                alert('✅ Slides eliminados! Ahora puedes agregar nuevos en el admin.');
+                
+            } catch (error) {
+                log('❌ Error: ' + error.message, 'error');
+                console.error(error);
+            }
+        }
+        
+        async function deleteAllProducts() {
+            if (!confirm('¿Estás seguro? Esto eliminará TODOS los productos.')) return;
+            
+            log('Iniciando eliminación de productos...', 'info');
+            
+            try {
+                const snapshot = await db.collection('products').get();
+                
+                if (snapshot.empty) {
+                    log('No hay productos para eliminar', 'info');
+                    return;
+                }
+                
+                log(`Encontrados ${snapshot.size} productos`, 'info');
+                
+                let deleted = 0;
+                for (const doc of snapshot.docs) {
+                    await doc.ref.delete();
+                    deleted++;
+                    log(`Eliminado producto ${deleted}/${snapshot.size}`, 'success-msg');
+                }
+                
+                log('✅ TODOS los productos eliminados con éxito!', 'success-msg');
+                alert('✅ Productos eliminados!');
+                
+            } catch (error) {
+                log('❌ Error: ' + error.message, 'error');
+                console.error(error);
+            }
+        }
+        
+        log('Página de limpieza cargada', 'info');
+        log('Firebase conectado', 'success-msg');
+    </script>
+</body>
+</html>
