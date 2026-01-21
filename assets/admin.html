@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administrativo - Essence Exclusive</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/logo_essence2026.png" alt="Essence Exclusive">
+            <h2>Admin Panel</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#products" class="nav-item" data-section="products">
+                <i class="fas fa-box"></i>
+                <span>Productos</span>
+            </a>
+            <a href="#slides" class="nav-item" data-section="slides">
+                <i class="fas fa-images"></i>
+                <span>Slides Hero</span>
+            </a>
+            <a href="#categories" class="nav-item" data-section="categories">
+                <i class="fas fa-tags"></i>
+                <span>Categorías</span>
+            </a>
+            <a href="#orders" class="nav-item" data-section="orders">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Pedidos</span>
+            </a>
+            <a href="index.html" class="nav-item nav-item-return">
+                <i class="fas fa-arrow-left"></i>
+                <span>Volver a la Tienda</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Panel Administrativo</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="userEmail">admin@essenceexclusive.com</span>
+                </div>
+                <button class="btn-logout" id="logoutBtn" title="Cerrar Sesión">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Stats -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <i class="fas fa-box"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalProducts">0</h3>
+                    <p>Total Productos</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="featuredProducts">0</h3>
+                    <p>Destacados</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="categories">3</h3>
+                    <p>Categorías</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <h3 id="totalValue">$0</h3>
+                    <p>Valor Inventario</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Management -->
+        <section class="product-section admin-section active" id="productsSection">
+            <div class="section-header">
+                <h2>Productos</h2>
+                <button class="btn btn-primary" id="addProductBtn">
+                    <i class="fas fa-plus"></i>
+                    Agregar Producto
+                </button>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchProduct" placeholder="Buscar productos...">
+                </div>
+                <select id="filterCategory" class="filter-select">
+                    <option value="all">Todas las Categorías</option>
+                </select>
+                <select id="filterFeatured" class="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="featured">Destacados</option>
+                    <option value="normal">No Destacados</option>
+                </select>
+            </div>
+
+            <!-- Products Table -->
+            <div class="table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Rating</th>
+                            <th>Destacado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Products will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Slides Management -->
+        <section class="slides-section admin-section" id="slidesSection">
+            <div class="section-header">
+                <h2>Slides Hero</h2>
+                <button class="btn btn-primary" id="addSlideBtn">
+                    <i class="fas fa-plus"></i>
+                    Agregar Slide
+                </button>
+            </div>
+
+            <div class="slides-info">
+                <i class="fas fa-info-circle"></i>
+                <p>Los slides aparecen en el hero de la página principal. Cada slide tiene una imagen de fondo y un elemento flotante.</p>
+            </div>
+
+            <div class="slides-grid" id="slidesGrid">
+                <!-- Slides will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Categories Management -->
+        <section class="categories-section admin-section" id="categoriesSection">
+            <div class="section-header">
+                <h2>Categorías</h2>
+                <button class="btn btn-primary" id="addCategoryBtn">
+                    <i class="fas fa-plus"></i>
+                    Agregar Categoría
+                </button>
+            </div>
+
+            <div class="categories-list" id="categoriesList">
+                <!-- Categories will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Producto</h2>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="productId">
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="productName">Nombre del Producto *</label>
+                        <input type="text" id="productName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productCategory">Categoría *</label>
+                        <select id="productCategory" required>
+                            <option value="">Seleccionar...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productSubcategory">Subcategoría</label>
+                        <select id="productSubcategory">
+                            <option value="">Seleccionar subcategoría...</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productPrice">Precio (ARS) *</label>
+                        <input type="number" id="productPrice" min="0" step="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productRating">Rating (1-5) *</label>
+                        <select id="productRating" required>
+                            <option value="5">5 ★★★★★</option>
+                            <option value="4">4 ★★★★☆</option>
+                            <option value="3">3 ★★★☆☆</option>
+                            <option value="2">2 ★★☆☆☆</option>
+                            <option value="1">1 ★☆☆☆☆</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="productImage">Imagen del Producto *</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="productImage" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Clique o arrastre una imagen aquí</p>
+                                <span class="file-name"></span>
+                            </div>
+                            <div class="image-preview" id="productImagePreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="productDescription">Descripción</label>
+                        <textarea id="productDescription" rows="3" placeholder="Descripción breve del producto"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="productFeatured">
+                            <span>Producto Destacado</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Producto
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Slide Modal -->
+    <div class="modal" id="slideModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="slideModalTitle">Agregar Slide</h2>
+                <button class="modal-close" id="slideModalClose">&times;</button>
+            </div>
+            <form id="slideForm">
+                <input type="hidden" id="slideId">
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="slideBackgroundImage">Imagen de Fondo *</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="slideBackgroundImage" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Imagen de fondo (1920x1080px recomendado)</p>
+                                <span class="file-name"></span>
+                            </div>
+                            <div class="image-preview" id="slideBackgroundPreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="slideFloatingImage">Imagen Flotante *</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="slideFloatingImage" accept="image/*" required>
+                            <div class="file-upload-display">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Imagen flotante (600x600px recomendado)</p>
+                                <span class="file-name"></span>
+                            </div>
+                            <div class="image-preview" id="slideFloatingPreview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="slideOrder">Orden</label>
+                        <input type="number" id="slideOrder" min="0" value="0">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="slideActive" checked>
+                            <span>Slide Activo</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelSlideBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Slide
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2 id="categoryModalTitle">Agregar Categoría</h2>
+                <button class="modal-close" id="categoryModalClose">&times;</button>
+            </div>
+            <form id="categoryForm">
+                <input type="hidden" id="categoryId">
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="categoryName">Nombre de la Categoría *</label>
+                        <input type="text" id="categoryName" required placeholder="ej: Femeninos, Masculinos">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="categorySlug">Slug (URL amigable) *</label>
+                        <input type="text" id="categorySlug" required placeholder="ej: femeninos, masculinos">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="categoryIcon">Ícono (Font Awesome)</label>
+                        <input type="text" id="categoryIcon" placeholder="fa-venus, fa-mars, fa-star">
+                        <small>Ver íconos en: fontawesome.com/icons</small>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelCategoryBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Categoría
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Subcategory Modal -->
+    <div class="modal" id="subcategoryModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Agregar Subcategoría</h2>
+                <button class="modal-close" id="subcategoryModalClose">&times;</button>
+            </div>
+            <form id="subcategoryForm">
+                <input type="hidden" id="subcategoryParentId">
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="subcategoryName">Nombre de la Subcategoría *</label>
+                        <input type="text" id="subcategoryName" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="subcategorySlug">Slug *</label>
+                        <input type="text" id="subcategorySlug" required>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelSubcategoryBtn">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i>
+                        Guardar Subcategoría
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Confirmar Eliminación</h2>
+                <button class="modal-close" id="deleteModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>¿Estás seguro de que deseas eliminar este producto?</p>
+                <p class="warning-text">Esta acción no se puede deshacer.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">
+                    <i class="fas fa-trash"></i>
+                    Eliminar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Modules -->
+    <script src="firebase.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
