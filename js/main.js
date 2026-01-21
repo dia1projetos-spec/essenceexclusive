@@ -3,19 +3,34 @@
    ======================================== */
 
 // === INITIALIZATION ===
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     initLoader();
     initNavigation();
     initSearch();
     initAnimations();
     initScrollEffects();
-    initHeroSlider(); // Inicializar slider
-    loadDynamicSlides(); // Carregar slides do localStorage
+    initHeroSlider();
+    
+    // Carregar dados do Firebase/LocalStorage
+    await loadDataFromFirebase();
+    
+    loadDynamicSlides();
     loadProducts();
-    loadCategoryFilters(); // Carregar filtros de categoria
+    loadCategoryFilters();
     initFilters();
     initForms();
 });
+
+// Carregar dados do Firebase (ou cache)
+async function loadDataFromFirebase() {
+    if (window.FirebaseProducts && window.FirebaseSlides && window.FirebaseCategories) {
+        console.log('🔄 Carregando dados do Firebase...');
+        // Aguardar módulos estarem disponíveis
+        await new Promise(resolve => setTimeout(resolve, 100));
+    } else {
+        console.log('⚠️ Módulos Firebase não carregados, usando LocalStorage');
+    }
+}
 
 // === LOADER ===
 function initLoader() {

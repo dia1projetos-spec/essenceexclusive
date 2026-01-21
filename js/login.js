@@ -44,7 +44,7 @@ async function handleLogin() {
     showLoading(true);
     
     try {
-        // CREDENCIAIS AUTORIZADAS (Modo Local - SEM Firebase)
+        // CREDENCIAIS AUTORIZADAS
         const AUTHORIZED_EMAIL = 'sofia@essenceexclusive.com';
         const AUTHORIZED_PASSWORD = 'qpaczm134679';
         
@@ -56,7 +56,7 @@ async function handleLogin() {
             // Login bem-sucedido
             const user = {
                 email: email,
-                uid: 'admin-sofia-local',
+                uid: 'admin-sofia',
                 displayName: 'Sofia - Admin'
             };
             
@@ -78,6 +78,37 @@ async function handleLogin() {
             throw new Error('Email o contraseña incorrectos');
         }
         
+        /* 
+        // CÓDIGO FIREBASE (descomente quando configurar)
+        if (typeof window.firebaseAuth === 'undefined') {
+            throw new Error('Firebase no está configurado. Configure Firebase en login.html');
+        }
+        
+        const { signInWithEmailAndPassword } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+        const userCredential = await signInWithEmailAndPassword(window.firebaseAuth, email, password);
+        const user = userCredential.user;
+        
+        // Salvar sessão
+        const userData = {
+            email: user.email,
+            uid: user.uid,
+            displayName: user.displayName
+        };
+        
+        if (rememberMe) {
+            localStorage.setItem('adminUser', JSON.stringify(userData));
+        } else {
+            sessionStorage.setItem('adminUser', JSON.stringify(userData));
+        }
+        
+        showNotification('Login realizado com sucesso!', 'success');
+        
+        // Redirecionar
+        setTimeout(() => {
+            window.location.href = 'admin.html';
+        }, 1000);
+        */
+        
     } catch (error) {
         console.error('Erro de login:', error);
         showNotification(error.message || 'Email o contraseña incorrectos', 'error');
@@ -91,12 +122,39 @@ async function handleGoogleLogin() {
     showLoading(true);
     
     try {
-        // DESABILITADO NO MODO LOCAL
-        showNotification('Login con Google no disponible en modo local. Use: sofia@essenceexclusive.com', 'error');
+        // DESABILITADO NO MODO DEMO
+        showNotification('Login con Google no disponible. Use email: sofia@essenceexclusive.com', 'error');
+        
+        /*
+        // CÓDIGO FIREBASE (descomente quando configurar)
+        if (typeof window.firebaseAuth === 'undefined' || typeof window.googleProvider === 'undefined') {
+            throw new Error('Firebase no está configurado');
+        }
+        
+        const { signInWithPopup } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+        const result = await signInWithPopup(window.firebaseAuth, window.googleProvider);
+        const user = result.user;
+        
+        // Salvar sessão
+        const userData = {
+            email: user.email,
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL
+        };
+        
+        localStorage.setItem('adminUser', JSON.stringify(userData));
+        
+        showNotification('Login com Google realizado!', 'success');
+        
+        setTimeout(() => {
+            window.location.href = 'admin.html';
+        }, 1000);
+        */
         
     } catch (error) {
         console.error('Erro Google login:', error);
-        showNotification('Login con Google no disponible', 'error');
+        showNotification(getErrorMessage(error), 'error');
     } finally {
         showLoading(false);
     }
@@ -198,7 +256,7 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-console.log('🔐 Login system initialized (LOCAL MODE)');
+console.log('🔐 Login system initialized');
 console.log('📧 Email: sofia@essenceexclusive.com');
 console.log('🔑 Password: qpaczm134679');
-console.log('💾 Dados salvos em LocalStorage (sem sincronização)');
+console.log('🔥 Configure Firebase para produção');
