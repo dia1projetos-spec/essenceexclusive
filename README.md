@@ -1,98 +1,101 @@
-# 🔥 ESSENCE EXCLUSIVE - VERSÃO DO ZERO
+# 🌸 ESSENCE EXCLUSIVE - VERSÃO 4.0 FINAL
 
-## ✅ ESTA VERSÃO:
-
-- 🗑️ **SEM localStorage** (exceto carrinho)
-- 📡 **TUDO vem da NUVEM**
-- ♻️ **Sincronização REAL**
-- 🎯 **Código ultra simples**
+## 🎉 **A VERSÃO DEFINITIVA ESTÁ PRONTA!**
 
 ---
 
-## 🚀 COMO FUNCIONA:
+## ✨ NOVIDADES VERSÃO 4.0
 
-### **Index (Site):**
-1. Carrega produtos **DA NUVEM**
-2. Carrega slides **DA NUVEM**
-3. Mostra produtos
-4. Carrinho funciona (localStorage SÓ para carrinho)
-5. Checkout WhatsApp
+### 🚀 **1. API MICORREO - COTIZAÇÃO REAL!**
+✅ Cálculo automático de frete  
+✅ Preços reais do Correo Argentino  
+✅ Origem: Córdoba (CEP 5127)  
+✅ Domicílio E Sucursal  
+✅ Tempo de entrega estimado
 
-### **Admin:**
-1. Carrega tudo **DA NUVEM**
-2. Salva **NA NUVEM**
-3. Deleta **DA NUVEM**
-4. ✅ **SINCRONIZA COM TODOS!**
+### 💬 **2. BOTÃO WHATSAPP FLUTUANTE**
+✅ Fixo no canto inferior direito  
+✅ Animação de pulso  
+✅ Número: +5513981763452  
+✅ Em TODAS as páginas
 
----
+### 💎 **3. PÁGINA QAED AL FURSAN ULTRA PREMIUM**
+✅ Imagem GIGANTE (70vh)  
+✅ Efeitos de brilho e partículas  
+✅ Animação flutuante  
+✅ Preço destacado ENORME  
+✅ Botão CTA gigante animado
 
-## 🔍 TESTE DE SINCRONIZAÇÃO:
-
-### **PC:**
-1. Admin → Adiciona produto
-2. Console: `✅ Produto CRIADO na nuvem: abc123`
-
-### **Celular/Aba Anônima:**
-1. Abre index.html
-2. Aguarda carregar
-3. Console: `✅ X produtos da NUVEM`
-4. ✅ **Produto aparece!**
+### 🏪 **4. INDEX PERFEITO**
+✅ Tienda com 6 produtos  
+✅ Banner Qaed Al Fursan mantido  
+✅ Tudo funcionando
 
 ---
 
-## 🎯 SE NÃO APARECER:
+## ⚙️ CONFIGURAR API MICORREO
 
-**Veja o Console (F12):**
+### **Editar `js/micorreo-api.js`:**
 
-**✅ BOM:**
-```
-🔥 Iniciando Firebase...
-✅ Firebase OK
-✅ 1 produtos da NUVEM
-✅ 0 slides da NUVEM
+```javascript
+credentials: {
+    user: 'SEU_USER',           // ← Solicitar ao Correo
+    password: 'SEU_PASSWORD',    // ← Solicitar ao Correo
+    customerId: 'SEU_CUSTOMER_ID' // ← Solicitar ao Correo
+}
 ```
 
-**❌ RUIM:**
-```
-❌ Firebase ERRO: [mensagem]
-```
-
-Se aparecer ERRO, **ME MANDA PRINT!**
+**Origem JÁ configurada:** Córdoba, CEP 5127 ✓
 
 ---
 
-## 📱 DELETAR SLIDES:
+## 💰 COMO FUNCIONA O FRETE
 
-1. Admin → Slides
-2. Vê TODOS os slides
-3. **"Eliminar"**
-4. Console: `✅ Slide DELETADO: xyz456`
-5. Recarrega index → ✅ Slide sumiu!
-
----
-
-## 🛒 CARRINHO:
-
-1. Adiciona produtos
-2. Clica carrinho (header)
-3. Modal abre
-4. **+/-** funciona
-5. **Total** atualiza
-6. Preenche formulário
-7. "Finalizar Pedido"
-8. ✅ WhatsApp abre!
+1. Cliente informa CEP
+2. Sistema tenta API MiCorreo
+3. Se funcionar → Preço real
+4. Se falhar → Tabela manual
+5. Cliente sempre vê preço
 
 ---
 
-## ⚠️ IMPORTANTE:
+## 🚀 PUBLICAR
 
-**Produtos/Slides = NUVEM (sincroniza)**
-**Carrinho = localStorage (não sincroniza)**
-
-Por quê? Cada pessoa tem SEU carrinho!
+**Netlify (mais fácil):**
+1. [netlify.com](https://netlify.com)
+2. Arrastar pasta
+3. Pronto!
 
 ---
 
-**SUBA NO GITHUB E TESTE!** 🚀
+## 📱 WHATSAPP: +5513981763452
 
-Me manda print do console se der erro! 📸
+Aparece em:
+- ✅ Botão flutuante
+- ✅ Seção contacto
+- ✅ Checkout carrito
+
+---
+
+## 🔍 SEO
+
+1. Google Search Console
+2. Enviar sitemap.xml
+3. Google My Business
+4. Pronto para aparecer no Google!
+
+---
+
+## ✅ CHECKLIST
+
+- [ ] Trocar credenciais API
+- [ ] Verificar WhatsApp
+- [ ] Publicar site
+- [ ] Configurar Google
+- [ ] **Vender!** 🚀
+
+---
+
+**© 2026 Essence Exclusive**
+
+¡Mucho éxito! 🌸✨

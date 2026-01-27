@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://essenceexclusive.com.ar/sitemap.xml
+
+# Bloquear acceso a directorios sensibles (si los hubiera)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.php$
+
+# Permitir acceso a CSS y JS para que Google pueda renderizar correctamente
+Allow: /css/
+Allow: /js/
+Allow: /images/

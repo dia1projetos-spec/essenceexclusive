@@ -1,432 +1,499 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Essence Exclusive - Cosmética y Perfumería</title>
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Essence Exclusive - Perfumería y Cosmética de Lujo en Argentina. Fragancias exclusivas, perfumes orientales, florales y amaderados. Envíos a todo el país. ✓ Productos originales ✓ Mejor precio">
+    <meta name="keywords" content="perfumería argentina, perfumes de lujo, fragancias exclusivas, perfumes orientales, Qaed Al Fursan, perfumes importados, cosmética de lujo, perfumes originales, tienda de perfumes, perfumería online argentina">
+    <meta name="author" content="Essence Exclusive">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://essenceexclusive.com.ar/">
+    <meta property="og:title" content="Essence Exclusive | Perfumería y Cosmética de Lujo">
+    <meta property="og:description" content="Descubrí fragancias exclusivas que definen tu esencia. Perfumes de lujo con envíos a todo Argentina.">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:locale" content="es_AR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://essenceexclusive.com.ar/">
+    <meta property="twitter:title" content="Essence Exclusive | Perfumería de Lujo">
+    <meta property="twitter:description" content="Fragancias exclusivas que definen tu esencia">
+    <meta property="twitter:image" content="images/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://essenceexclusive.com.ar/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <title>Essence Exclusive | Perfumería y Cosmética de Lujo en Argentina</title>
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Essence Exclusive",
+      "description": "Perfumería y Cosmética de Lujo en Argentina",
+      "url": "https://essenceexclusive.com.ar",
+      "logo": "https://essenceexclusive.com.ar/images/logo.png",
+      "image": "https://essenceexclusive.com.ar/images/logo.png",
+      "telephone": "+5513981763452",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "AR",
+        "addressLocality": "Buenos Aires"
+      },
+      "priceRange": "$$$$",
+      "openingHours": "Mo-Sa 09:00-20:00"
+    }
+    </script>
 </head>
 <body>
     <!-- Loader -->
     <div class="loader" id="loader">
         <div class="loader-content">
-            <div class="loader-logo">
-                <img src="assets/logo_essence2026.png" alt="Essence Exclusive">
-            </div>
-            <div class="loader-animation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="loader-logo"></div>
+            <div class="loader-text">Essence Exclusive</div>
         </div>
     </div>
 
     <!-- Header -->
-    <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top-content">
-                    <div class="header-info">
-                        <span><i class="fas fa-phone"></i> +54 9 11 1234-5678</span>
-                        <span><i class="fas fa-envelope"></i> contacto@essenceexclusive.com.ar</span>
-                    </div>
-                    <div class="header-links">
-                        <a href="admin.html"><i class="fas fa-user-shield"></i> Admin</a>
-                    </div>
+    <header class="header" itemscope itemtype="https://schema.org/WPHeader">
+        <nav class="nav" role="navigation">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="/" aria-label="Essence Exclusive - Inicio">
+                        <img src="images/logo.png" alt="Essence Exclusive Perfumería Logo" class="logo-img" width="200" height="50">
+                    </a>
                 </div>
-            </div>
-        </div>
-        
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-content">
-                    <div class="logo">
-                        <img src="assets/logo_essence2026.png" alt="Essence Exclusive">
-                    </div>
-                    
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="#home" class="nav-link active">Inicio</a></li>
-                        <li><a href="#products" class="nav-link">Productos</a></li>
-                        <li><a href="#featured" class="nav-link">Destacados</a></li>
-                        <li><a href="#about" class="nav-link">Nosotros</a></li>
-                        <li><a href="#contact" class="nav-link">Contacto</a></li>
-                    </ul>
-                    
-                    <div class="nav-actions">
-                        <button class="search-btn" id="searchBtn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                        <button class="cart-btn" id="cartBtn">
-                            <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count" id="cartCount">0</span>
-                        </button>
-                        <button class="menu-toggle" id="menuToggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                    </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#tienda" class="nav-link">Tienda</a></li>
+                    <li><a href="#colecciones" class="nav-link">Colecciones</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="nav-icon" id="searchBtn" aria-label="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="nav-icon cart-btn" id="cartBtn" aria-label="Carrito de compras">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6M6 6H4M18 6h2M10 10v4M14 10v4"></path>
+                        </svg>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Search Modal -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-content">
-            <button class="search-close" id="searchClose">&times;</button>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Buscar perfumes...">
-                <button class="search-submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Mi Carrito</h3>
-            <button class="cart-close" id="cartClose">&times;</button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <div class="cart-empty">
-                <i class="fas fa-shopping-bag"></i>
-                <p>Tu carrito está vacío</p>
-            </div>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span class="total-price" id="totalPrice">$0.00</span>
-            </div>
-            <button class="btn btn-primary btn-block" id="checkoutBtn">Finalizar Compra</button>
-        </div>
-    </div>
-
-    <div class="cart-overlay" id="cartOverlay"></div>
-
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <!-- Background Slider -->
-        <div class="hero-bg-slider">
-            <div class="hero-bg-slide active" style="background-image: url('https://images.unsplash.com/photo-1541643600914-78b084683601?w=1920&q=80');"></div>
-            <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1920&q=80');"></div>
-            <div class="hero-bg-slide" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1920&q=80');"></div>
-            <div class="hero-overlay"></div>
+    <section class="hero" id="inicio">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="hero-title-line">Elegancia</span>
+                    <span class="hero-title-line">Excepcional</span>
+                </h1>
+                <p class="hero-subtitle">Descubrí fragancias que definen tu esencia</p>
+                <a href="#tienda" class="btn btn-primary">Explorar Colección</a>
+            </div>
         </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator"></div>
+        </div>
+    </section>
 
-        <!-- Content -->
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-subtitle" data-aos="fade-up">Colección Premium</span>
-                    <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                        La Esencia de la
-                        <span class="gradient-text">Elegancia</span>
-                    </h1>
-                    <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                        Descubrí nuestra exclusiva selección de fragancias de lujo
-                    </p>
-                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
-                        <a href="#products" class="btn btn-primary">
-                            Explorar Colección
-                            <i class="fas fa-arrow-right"></i>
+    <!-- ULTRA FEATURED PRODUCT - QAED AL FURSAN -->
+    <section class="ultra-featured" id="destaque">
+        <div class="ultra-featured-bg"></div>
+        <div class="ultra-featured-container">
+            <div class="ultra-featured-content">
+                <span class="ultra-label">FRAGANCIA EXCLUSIVA</span>
+                <h2 class="ultra-title">
+                    <span class="ultra-title-line">Qaed</span>
+                    <span class="ultra-title-line">Al Fursan</span>
+                </h2>
+                <p class="ultra-subtitle">قائد الفرسان</p>
+                <p class="ultra-description">
+                    El poder y la nobleza de los caballeros árabes capturado 
+                    en una fragancia magistral. Notas intensas de Oud, Rosa Damascena 
+                    y Ámbar crean una experiencia olfativa inolvidable.
+                </p>
+                <div class="ultra-features">
+                    <div class="ultra-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span>Edición Limitada 100ml</span>
+                    </div>
+                    <div class="ultra-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                        <span>Longevidad 8-12 horas</span>
+                    </div>
+                    <div class="ultra-feature">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>100% Original Garantizado</span>
+                    </div>
+                </div>
+                <div class="ultra-price-section">
+                    <div class="ultra-price">
+                        <span class="ultra-currency">$</span>
+                        <span class="ultra-amount">38.000</span>
+                    </div>
+                    <div class="ultra-actions">
+                        <button class="btn btn-ultra-primary" onclick="addToCart('Qaed Al Fursan', 38000, 350)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                            </svg>
+                            Agregar al Carrito
+                        </button>
+                        <a href="qaed-al-fursan.html" class="btn btn-ultra-secondary">
+                            Ver Detalles
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
                         </a>
-                        <a href="#featured" class="btn btn-outline">
-                            Ver Destacados
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Floating Element Slider -->
-                <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
-                    <div class="floating-element-slider">
-                        <div class="floating-element active">
-                            <img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59d75?w=600&q=80" alt="Perfume 1">
-                        </div>
-                        <div class="floating-element">
-                            <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&q=80" alt="Perfume 2">
-                        </div>
-                        <div class="floating-element">
-                            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&q=80" alt="Perfume 3">
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Slider Controls -->
-        <div class="hero-slider-controls">
-            <button class="slider-control prev" id="heroPrev">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <div class="slider-dots" id="heroDotsContainer">
-                <span class="slider-dot active" data-slide="0"></span>
-                <span class="slider-dot" data-slide="1"></span>
-                <span class="slider-dot" data-slide="2"></span>
+            <div class="ultra-featured-image">
+                <div class="ultra-image-glow"></div>
+                <div class="ultra-image-container">
+                    <div class="ultra-badge">⭐ EDICIÓN EXCLUSIVA</div>
+                    <img src="images/qaed-al-fursan.jpg" alt="Qaed Al Fursan Perfume" class="ultra-image">
+                    <div class="ultra-image-shine"></div>
+                </div>
+                <div class="ultra-particles">
+                    <div class="ultra-particle"></div>
+                    <div class="ultra-particle"></div>
+                    <div class="ultra-particle"></div>
+                    <div class="ultra-particle"></div>
+                    <div class="ultra-particle"></div>
+                    <div class="ultra-particle"></div>
+                </div>
             </div>
-            <button class="slider-control next" id="heroNext">
-                <i class="fas fa-chevron-right"></i>
-            </button>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
+    <!-- Products Shop Section -->
+    <section class="shop" id="tienda">
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-shipping-fast"></i>
-                    </div>
-                    <h3>Envío Gratis</h3>
-                    <p>En compras superiores a $50.000</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>100% Originales</h3>
-                    <p>Productos certificados y auténticos</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Atención 24/7</h3>
-                    <p>Soporte personalizado siempre</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-icon">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                    <h3>Devolución Fácil</h3>
-                    <p>30 días para cambios y devoluciones</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Special Campaign - Khamrah -->
-    <section class="khamrah-campaign">
-        <div class="campaign-container">
-            <!-- Left Side - Image -->
-            <div class="campaign-image-side" data-aos="fade-right">
-                <div class="campaign-image-wrapper">
-                    <img src="assets/khamrah-campaign.jpg" alt="Khamrah - Olor a Poder">
-                    <div class="image-glow"></div>
-                </div>
-            </div>
-
-            <!-- Right Side - Content -->
-            <div class="campaign-content-side" data-aos="fade-left">
-                <div class="campaign-header">
-                    <span class="campaign-label">
-                        <i class="fas fa-crown"></i>
-                        LANZAMIENTO EXCLUSIVO
-                    </span>
-                    <h2 class="campaign-title-main">KHAMRAH</h2>
-                    <p class="campaign-subtitle">Body Mist Luxury Edition</p>
-                </div>
-
-                <div class="campaign-quote">
-                    <div class="quote-icon">"</div>
-                    <h3>Olor a Poder.<br>Firma de Respeto.</h3>
-                    <div class="quote-line"></div>
-                </div>
-
-                <div class="campaign-text">
-                    <p>La fragancia que distingue a los líderes. Una composición oriental que combina especias nobles con maderas preciosas. Khamrah no es solo un perfume, es tu carta de presentación ante el mundo.</p>
-                </div>
-
-                <div class="campaign-highlights">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <strong>Edición Limitada</strong>
-                            <span>Exclusivo en Argentina</span>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <strong>Duración Extrema</strong>
-                            <span>Hasta 12 horas</span>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <strong>Calidad Premium</strong>
-                            <span>Ingredientes selectos</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="campaign-price-section">
-                    <div class="price-info">
-                        <span class="price-label">PRECIO LANZAMIENTO</span>
-                        <div class="price-box">
-                            <span class="price-current">$145.000</span>
-                            <span class="price-old">$180.000</span>
-                        </div>
-                        <span class="price-save">Ahorrás $35.000</span>
-                    </div>
-                </div>
-
-                <div class="campaign-cta">
-                    <a href="product-khamrah.html" class="btn-khamrah">
-                        <span class="btn-text">DESCUBRÍ KHAMRAH</span>
-                        <span class="btn-icon">
-                            <i class="fas fa-arrow-right"></i>
-                        </span>
-                    </a>
-                    <div class="campaign-guarantee">
-                        <i class="fas fa-shield-alt"></i>
-                        <span>Garantía de autenticidad 100%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Decorative Elements -->
-        <div class="campaign-decoration">
-            <div class="deco-circle deco-1"></div>
-            <div class="deco-circle deco-2"></div>
-            <div class="deco-line deco-3"></div>
-        </div>
-    </section>
-
-    <!-- Categories -->
-    <section class="categories">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Explora por Categoría</span>
-                <h2 class="section-title">Nuestras Colecciones</h2>
-            </div>
-            <div class="categories-grid">
-                <div class="category-card" data-aos="zoom-in">
-                    <div class="category-image">
-                        <div class="category-overlay"></div>
-                        <i class="fas fa-venus"></i>
-                    </div>
-                    <h3>Femeninos</h3>
-                    <p>Fragancias delicadas y sofisticadas</p>
-                    <a href="#" class="category-link">Explorar <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="category-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="category-image">
-                        <div class="category-overlay"></div>
-                        <i class="fas fa-mars"></i>
-                    </div>
-                    <h3>Masculinos</h3>
-                    <p>Aromas intensos y cautivadores</p>
-                    <a href="#" class="category-link">Explorar <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="category-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="category-image">
-                        <div class="category-overlay"></div>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3>Exclusivos</h3>
-                    <p>Ediciones limitadas y únicas</p>
-                    <a href="#" class="category-link">Explorar <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section class="featured-products" id="featured">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Lo Más Destacado</span>
-                <h2 class="section-title">Productos Estrella</h2>
-            </div>
-            <div class="products-grid" id="featuredProducts">
-                <!-- Products will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- All Products -->
-    <section class="all-products" id="products">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Nuestra Colección</span>
-                <h2 class="section-title">Todos los Productos</h2>
+            <div class="section-header">
+                <h2 class="section-title">Nuestra Tienda</h2>
+                <p class="section-subtitle">Fragancias exclusivas seleccionadas especialmente para vos</p>
             </div>
             
-            <div class="products-filter">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <!-- Categories will be loaded dynamically -->
-                <div id="categoryFilters"></div>
-            </div>
+            <div class="products-grid">
+                <!-- Product 1 - Qaed Al Fursan -->
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-badge">Destacado</div>
+                    <a href="qaed-al-fursan.html" class="product-link">
+                        <div class="product-image">
+                            <img src="images/qaed-al-fursan.jpg" alt="Qaed Al Fursan Perfume" itemprop="image">
+                            <div class="product-overlay">
+                                <span class="quick-view">Ver Detalles</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="product-info">
+                        <h3 class="product-name" itemprop="name">Qaed Al Fursan</h3>
+                        <p class="product-category">Eau de Parfum Oriental</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(127)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                                <meta itemprop="priceCurrency" content="ARS">
+                                <span class="price-current" itemprop="price" content="38000">$38.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Qaed Al Fursan', 38000, 350)" aria-label="Agregar Qaed Al Fursan al carrito">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="products-grid" id="allProducts">
-                <!-- Products will be loaded dynamically -->
+                <!-- Product 2 -->
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-badge new">Nuevo</div>
+                    <div class="product-link">
+                        <div class="product-image">
+                            <div class="product-placeholder" style="background: linear-gradient(135deg, #c850c0 0%, #ffcc70 100%);"></div>
+                            <div class="product-overlay">
+                                <span class="quick-view">Ver Detalles</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name" itemprop="name">Rosa Damascena</h3>
+                        <p class="product-category">Eau de Parfum Floral</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$42.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Rosa Damascena', 42000, 350)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                    <div class="product-image">
+                        <div class="product-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                        <div class="product-overlay">
+                            <span class="quick-view">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Oud Imperial</h3>
+                        <p class="product-category">Eau de Parfum Oriental</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$45.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Oud Imperial', 45000, 350)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 4 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                        <div class="product-overlay">
+                            <span class="quick-view">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Jasmine Noir</h3>
+                        <p class="product-category">Eau de Parfum Floral</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(73)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$39.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Jasmine Noir', 39000, 350)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 5 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                        <div class="product-overlay">
+                            <span class="quick-view">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Aqua Masculine</h3>
+                        <p class="product-category">Eau de Toilette Fresco</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(201)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$36.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Aqua Masculine', 36000, 350)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 6 -->
+                <article class="product-card">
+                    <div class="product-image">
+                        <div class="product-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                        <div class="product-overlay">
+                            <span class="quick-view">Ver Detalles</span>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Sándalo Mystic</h3>
+                        <p class="product-category">Eau de Parfum Amaderado</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(92)</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-current">$41.000</span>
+                            </div>
+                            <button class="btn-add-cart" onclick="addToCart('Sándalo Mystic', 41000, 350)">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6"></path>
+                                </svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
+    <!-- Featured Product Banner -->
+    <section class="featured-banner">
+        <div class="featured-banner-content">
+            <div class="featured-banner-text">
+                <span class="featured-banner-label">Fragancia Exclusiva</span>
+                <h2>Qaed Al Fursan</h2>
+                <p>Una experiencia olfativa magistral que refleja sofisticación y distinción</p>
+                <a href="qaed-al-fursan.html" class="btn btn-gold">Descubrir Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="collections" id="colecciones">
         <div class="container">
-            <div class="newsletter-content" data-aos="fade-up">
-                <div class="newsletter-text">
-                    <h2>Suscribite a Nuestro Newsletter</h2>
-                    <p>Recibí las últimas novedades y ofertas exclusivas</p>
+            <div class="section-header">
+                <h2 class="section-title">Nuestras Colecciones</h2>
+                <p class="section-subtitle">Fragancias cuidadosamente seleccionadas para cada ocasión</p>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Fragancias Orientales</h3>
+                        <p>Perfumes ricos y cautivadores inspirados en las tradiciones del Medio Oriente</p>
+                        <a href="#tienda" class="btn-link">Explorar →</a>
+                    </div>
                 </div>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="btn btn-primary">
-                        Suscribirse
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Fragancias Florales</h3>
+                        <p>Delicadas composiciones que celebran la belleza de las flores</p>
+                        <a href="#tienda" class="btn-link">Explorar →</a>
+                    </div>
+                </div>
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <div class="collection-overlay"></div>
+                    </div>
+                    <div class="collection-content">
+                        <h3>Fragancias Amaderadas</h3>
+                        <p>Aromas sofisticados con profundidad y carácter masculino</p>
+                        <a href="#tienda" class="btn-link">Explorar →</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="nosotros">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image" data-aos="fade-right">
-                    <div class="about-image-wrapper">
-                        <img src="assets/logo_essence2026.png" alt="Essence Exclusive">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Essence Exclusive</h2>
+                    <p class="about-description">
+                        En Essence Exclusive, creemos que una fragancia es más que un aroma: 
+                        es una expresión de identidad, un arte que captura momentos y emociones. 
+                        Desde 2020, nos dedicamos a ofrecer las fragancias más exclusivas y 
+                        sofisticadas de Argentina.
+                    </p>
+                    <p class="about-description">
+                        Cada perfume en nuestra colección ha sido cuidadosamente seleccionado 
+                        para garantizar autenticidad, calidad excepcional y una experiencia 
+                        olfativa memorable.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Productos 100% Originales</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Envíos a Todo el País</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✓</div>
+                            <div class="feature-text">Asesoramiento Personalizado</div>
+                        </div>
                     </div>
                 </div>
-                <div class="about-content" data-aos="fade-left">
-                    <span class="section-subtitle">Sobre Nosotros</span>
-                    <h2 class="section-title">La Esencia de la Perfección</h2>
-                    <p>En Essence Exclusive, creemos que cada fragancia cuenta una historia única. Desde 2020, nos dedicamos a ofrecer las mejores marcas de perfumería y cosmética del mundo, cuidadosamente seleccionadas para ti.</p>
-                    <p>Nuestra pasión es ayudarte a encontrar ese aroma perfecto que refleje tu personalidad y estilo único.</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <h3>500+</h3>
-                            <p>Productos</p>
-                        </div>
-                        <div class="stat">
-                            <h3>50+</h3>
-                            <p>Marcas Premium</p>
-                        </div>
-                        <div class="stat">
-                            <h3>10K+</h3>
-                            <p>Clientes Felices</p>
-                        </div>
+                <div class="about-image">
+                    <div class="about-image-wrapper">
+                        <div class="about-decoration"></div>
                     </div>
                 </div>
             </div>
@@ -434,65 +501,61 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contacto">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <span class="section-subtitle">Contactanos</span>
-                <h2 class="section-title">Estamos Aquí Para Ayudarte</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Contacto</h2>
+                    <p class="contact-text">
+                        ¿Tenés alguna consulta? Estamos para ayudarte a encontrar 
+                        la fragancia perfecta.
+                    </p>
+                    <div class="contact-methods">
+                        <a href="https://wa.me/5513981763452" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            <div>
+                                <strong>WhatsApp</strong>
+                                <span>+55 13 98176-3452</span>
+                            </div>
+                        </a>
+                        <a href="mailto:info@essenceexclusive.com.ar" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                            </svg>
+                            <div>
+                                <strong>Email</strong>
+                                <span>info@essenceexclusive.com.ar</span>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>Buenos Aires, Argentina</span>
+                            </div>
                         </div>
-                        <div>
-                            <h4>Dirección</h4>
-                            <p>Av. Corrientes 1234, CABA, Argentina</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>+54 9 11 1234-5678</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contacto@essenceexclusive.com.ar</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-                <form class="contact-form" data-aos="fade-left">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
-                        <input type="text" placeholder="Tu Nombre" required>
+                        <input type="text" id="name" required class="form-input">
+                        <label for="name" class="form-label">Nombre</label>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Tu Email" required>
+                        <input type="email" id="email" required class="form-input">
+                        <label for="email" class="form-label">Email</label>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Tu Teléfono">
+                        <textarea id="message" required class="form-input form-textarea"></textarea>
+                        <label for="message" class="form-label">Mensaje</label>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">
-                        Enviar Mensaje
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
                 </form>
             </div>
         </div>
@@ -501,107 +564,202 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="assets/logo_essence2026.png" alt="Essence Exclusive" class="footer-logo">
-                    <p>Tu destino para fragancias de lujo y cosmética exclusiva en Argentina.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="Essence Exclusive Logo" class="footer-logo" width="150" height="40">
+                    <p class="footer-tagline">Cosmética y Perfumería</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#tienda">Tienda</a></li>
+                        <li><a href="#colecciones">Colecciones</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Seguinos</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/>
+                            </svg>
+                        </a>
                     </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#products">Productos</a></li>
-                        <li><a href="#featured">Destacados</a></li>
-                        <li><a href="#about">Nosotros</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Ayuda</h4>
-                    <ul>
-                        <li><a href="#">Preguntas Frecuentes</a></li>
-                        <li><a href="#">Envíos</a></li>
-                        <li><a href="#">Devoluciones</a></li>
-                        <li><a href="#">Términos y Condiciones</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Información</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Av. Corrientes 1234, CABA</li>
-                        <li><i class="fas fa-phone"></i> +54 9 11 1234-5678</li>
-                        <li><i class="fas fa-envelope"></i> contacto@essenceexclusive.com.ar</li>
-                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Essence Exclusive. Todos los derechos reservados.</p>
-                <div class="payment-methods">
-                    <i class="fab fa-cc-visa"></i>
-                    <i class="fab fa-cc-mastercard"></i>
-                    <i class="fab fa-cc-amex"></i>
-                    <span class="payment-text">Mercado Pago</span>
-                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5513981763452?text=Olá!%20Vim%20do%20site%20Essence%20Exclusive%20e%20gostaria%20de%20mais%20informações" 
-       class="whatsapp-float" 
-       target="_blank"
-       title="Chateá con nosotros">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-pulse"></span>
-    </a>
-
-    <!-- Modal Carrinho -->
-    <div class="modal" id="cartModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; align-items:center; justify-content:center;">
-        <div style="background:white; width:90%; max-width:600px; max-height:90vh; border-radius:15px; overflow:hidden; display:flex; flex-direction:column;">
-            <div style="padding:1.5rem; border-bottom:1px solid #eee; display:flex; justify-content:space-between; align-items:center;">
-                <h2 style="margin:0; display:flex; align-items:center; gap:0.5rem;"><i class="fas fa-shopping-bag"></i> Carrito</h2>
-                <button onclick="closeCart()" style="border:none; background:none; font-size:2rem; cursor:pointer; color:#999;">&times;</button>
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button class="cart-close" id="cartClose" aria-label="Cerrar carrito">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M9 2L7.5 6M15 2L16.5 6M6 6h12M6 6l1.5 12h9L18 6M6 6H4M18 6h2"></path>
+                </svg>
+                <p>Tu carrito está vacío</p>
             </div>
-            <div id="cartItems" style="flex:1; overflow-y:auto; padding:1rem;"></div>
-            <div id="emptyCart" style="display:none; text-align:center; padding:3rem; color:#999;">
-                <i class="fas fa-shopping-cart" style="font-size:4rem; margin-bottom:1rem;"></i>
-                <p>Carrito vacío</p>
+        </div>
+        <div class="cart-shipping" id="cartShipping" style="display: none;">
+            <button class="btn-calculate-shipping" id="btnCalculateShipping">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+                Calcular Envío
+            </button>
+            <div class="shipping-details" id="shippingDetails" style="display: none;">
+                <div class="shipping-info-cart">
+                    <span>Envío</span>
+                    <span id="cartShippingCost">$0</span>
+                </div>
+                <button class="btn-link-small" id="btnChangeShipping">Cambiar</button>
             </div>
-            <div id="checkoutSection" style="display:none; padding:1.5rem; border-top:1px solid #eee; background:#f9f9f9;">
-                <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:1.2rem;">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="cart-subtotal">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0</span>
+                </div>
+                <div class="cart-shipping-total" id="cartShippingTotal" style="display: none;">
+                    <span>Envío:</span>
+                    <span id="cartShippingAmount">$0</span>
+                </div>
+                <div class="cart-total">
                     <span>Total:</span>
-                    <strong id="cartTotal" style="color:#c4a76b; font-size:1.5rem;">$0</strong>
+                    <span id="cartTotal">$0</span>
                 </div>
-                <h3 style="margin:0 0 1rem; font-size:1.1rem;"><i class="fas fa-user"></i> Datos</h3>
-                <input type="text" id="userName" placeholder="Nombre *" style="width:100%; padding:0.8rem; margin-bottom:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                <input type="text" id="userAddress" placeholder="Dirección *" style="width:100%; padding:0.8rem; margin-bottom:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:0.8rem;">
-                    <input type="text" id="userCity" placeholder="Ciudad *" style="padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                    <input type="text" id="userState" placeholder="Estado *" style="padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                </div>
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; margin-bottom:1rem;">
-                    <input type="text" id="userCEP" placeholder="CEP *" style="padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                    <input type="tel" id="userPhone" placeholder="Teléfono" style="padding:0.8rem; border:1px solid #ddd; border-radius:8px;">
-                </div>
-                <button onclick="finalizarPedido()" style="width:100%; padding:1rem; background:#25D366; color:white; border:none; border-radius:8px; font-size:1.05rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem;">
-                    <i class="fab fa-whatsapp" style="font-size:1.3rem;"></i> Finalizar Pedido
-                </button>
             </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()" id="checkoutBtn">Finalizar Compra</button>
         </div>
     </div>
 
-    <script src="firebase.js"></script>
-    <script src="main.js"></script>
-    <script src="cart.js"></script>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5513981763452" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <span class="whatsapp-pulse"></span>
+    </a>
+
+    <!-- Shipping Calculator Modal -->
+    <div class="shipping-modal" id="shippingModal">
+        <div class="shipping-modal-content">
+            <div class="shipping-modal-header">
+                <h3>Calcular Envío</h3>
+                <button class="shipping-modal-close" id="shippingModalClose" aria-label="Cerrar">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <form class="shipping-form" id="shippingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="shippingProvince" class="form-label-static">Provincia *</label>
+                        <select id="shippingProvince" required class="form-select">
+                            <option value="">Seleccionar provincia</option>
+                            <option value="A">Salta</option>
+                            <option value="B">Provincia de Buenos Aires</option>
+                            <option value="C">Ciudad Autónoma de Buenos Aires</option>
+                            <option value="D">San Luis</option>
+                            <option value="E">Entre Ríos</option>
+                            <option value="F">La Rioja</option>
+                            <option value="G">Santiago del Estero</option>
+                            <option value="H">Chaco</option>
+                            <option value="J">San Juan</option>
+                            <option value="K">Catamarca</option>
+                            <option value="L">La Pampa</option>
+                            <option value="M">Mendoza</option>
+                            <option value="N">Misiones</option>
+                            <option value="P">Formosa</option>
+                            <option value="Q">Neuquén</option>
+                            <option value="R">Río Negro</option>
+                            <option value="S">Santa Fe</option>
+                            <option value="T">Tucumán</option>
+                            <option value="U">Chubut</option>
+                            <option value="V">Tierra del Fuego</option>
+                            <option value="W">Corrientes</option>
+                            <option value="X">Córdoba</option>
+                            <option value="Y">Jujuy</option>
+                            <option value="Z">Santa Cruz</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="shippingZipCode" class="form-label-static">Código Postal *</label>
+                        <input type="text" id="shippingZipCode" required class="form-input-static" placeholder="Ej: 1234">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="shippingCity" class="form-label-static">Ciudad *</label>
+                    <input type="text" id="shippingCity" required class="form-input-static" placeholder="Ej: Buenos Aires">
+                </div>
+                
+                <div class="form-group">
+                    <label for="shippingType" class="form-label-static">Tipo de Entrega *</label>
+                    <select id="shippingType" required class="form-select">
+                        <option value="homeDelivery">Entrega a Domicilio</option>
+                        <option value="agency">Retiro en Sucursal (20% desc.)</option>
+                        <option value="locker">Retiro en Locker (15% desc.)</option>
+                    </select>
+                </div>
+                
+                <div class="shipping-result" id="shippingResult" style="display: none;">
+                    <div class="shipping-info">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                        <div>
+                            <strong>Costo de Envío</strong>
+                            <span class="shipping-price" id="shippingPrice">$0</span>
+                        </div>
+                    </div>
+                    <p class="shipping-note">*Envío gratis en compras superiores a $150.000</p>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Calcular Envío</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/shipping-config.js"></script>
+    <script src="js/micorreo-api.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
 </body>
 </html>
