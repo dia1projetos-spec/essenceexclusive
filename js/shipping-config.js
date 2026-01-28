@@ -3,18 +3,20 @@
 // ============================================
 
 // Tabela de preços de frete por peso (en gramos) e tipo de entrega
-// VALORES REAIS baseados em simulação Córdoba (5127) → Buenos Aires
-// Atualizados em Janeiro 2026
+// VALORES PARA PESO VOLUMÉTRICO 1.6kg (caixa 20x20x20cm)
+// Baseado em: Cliente simulou $8.308 para Buenos Aires
+// Sistema tenta usar API MiCorreo primeiro, depois usa esta tabela
 
 const SHIPPING_CONFIG = {
-    // Flete por peso (en pesos argentinos) - VALORES CORRIGIDOS
+    // Frete por peso (en pesos argentinos)
+    // IMPORTANTE: Produtos com 1kg mas caixa 20x20x20 = 1.6kg volumétrico
     weightRanges: [
-        { maxWeight: 500, price: 3200 },      // Hasta 500g → $3.200
-        { maxWeight: 1000, price: 4500 },     // Hasta 1kg → $4.500
-        { maxWeight: 2000, price: 6800 },     // Hasta 2kg → $6.800
-        { maxWeight: 5000, price: 11500 },    // Hasta 5kg → $11.500
-        { maxWeight: 10000, price: 18000 },   // Hasta 10kg → $18.000
-        { maxWeight: 25000, price: 28000 },   // Hasta 25kg → $28.000
+        { maxWeight: 500, price: 5500 },      // Hasta 500g (volumétrico ~800g) → $5.500
+        { maxWeight: 1000, price: 8300 },     // Hasta 1kg (volumétrico 1.6kg) → $8.300
+        { maxWeight: 2000, price: 12000 },    // Hasta 2kg (volumétrico 3.2kg) → $12.000
+        { maxWeight: 5000, price: 22000 },    // Hasta 5kg (volumétrico 8kg) → $22.000
+        { maxWeight: 10000, price: 38000 },   // Hasta 10kg (volumétrico 16kg) → $38.000
+        { maxWeight: 25000, price: 68000 },   // Hasta 25kg (volumétrico 40kg) → $68.000
     ],
     
     // Multiplicadores por tipo de entrega

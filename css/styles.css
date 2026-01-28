@@ -2316,3 +2316,445 @@ button {
         align-items: stretch;
     }
 }
+
+/* ============================================
+   RESPONSIVO MOBILE & TABLET - COMPLETO
+   ============================================ */
+
+/* Tablet - 768px a 968px */
+@media (max-width: 968px) {
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 100px 0 60px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Ultra Featured */
+    .ultra-featured-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .ultra-featured-image {
+        height: 500px;
+        order: -1;
+    }
+    
+    .ultra-title-line {
+        font-size: 4rem;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Collections */
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* About */
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contact */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Mobile - até 640px */
+@media (max-width: 640px) {
+    /* Typography */
+    html {
+        font-size: 14px;
+    }
+    
+    /* Container */
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Header */
+    .header {
+        padding: 1rem 0;
+    }
+    
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .logo-img {
+        height: 40px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 60vh;
+        padding: 80px 0 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Section Headers */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Ultra Featured */
+    .ultra-featured {
+        padding: 3rem 0;
+    }
+    
+    .ultra-featured-container {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+    
+    .ultra-featured-image {
+        height: 400px;
+    }
+    
+    .ultra-title-line {
+        font-size: 3rem;
+    }
+    
+    .ultra-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .ultra-description {
+        font-size: 1rem;
+    }
+    
+    .ultra-amount {
+        font-size: 3.5rem;
+    }
+    
+    .ultra-actions {
+        flex-direction: column;
+    }
+    
+    .btn-ultra-primary,
+    .btn-ultra-secondary {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .product-card {
+        max-width: 100%;
+    }
+    
+    .product-image {
+        height: 320px;
+    }
+    
+    /* Featured Banner */
+    .featured-banner-text h2 {
+        font-size: 2.5rem;
+    }
+    
+    /* Collections */
+    .collection-card {
+        min-height: 300px;
+    }
+    
+    /* About */
+    .about {
+        padding: 3rem 0;
+    }
+    
+    .about-features {
+        flex-direction: column;
+    }
+    
+    /* Contact */
+    .contact {
+        padding: 3rem 0;
+    }
+    
+    .contact-methods {
+        gap: 1rem;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-links ul,
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Cart Sidebar */
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* Modals */
+    .shipping-modal-content,
+    .checkout-modal-content {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        max-height: 100vh;
+    }
+    
+    .form-row,
+    .form-row-checkout {
+        grid-template-columns: 1fr;
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .whatsapp-float svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Mobile Pequeno - até 375px */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .ultra-title-line {
+        font-size: 2.5rem;
+    }
+    
+    .ultra-amount {
+        font-size: 3rem;
+    }
+    
+    .product-name {
+        font-size: 1.2rem;
+    }
+    
+    .price-current {
+        font-size: 1.5rem;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 968px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+    }
+    
+    .ultra-featured-image {
+        height: 350px;
+    }
+}
+
+/* ============================================
+   MELHORIAS PREMIUM ADICIONAIS
+   ============================================ */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animação de entrada para elementos */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header,
+.product-card,
+.collection-card {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Hover melhorado em links */
+a {
+    transition: all 0.3s ease;
+}
+
+/* Loading state para imagens */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[data-src] {
+    opacity: 0.5;
+}
+
+img:not([data-src]) {
+    opacity: 1;
+}
+
+/* Focus states melhorados para acessibilidade */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Botão hamburguer animado */
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--color-primary);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Melhoria no contrast para acessibilidade */
+.btn-primary:focus,
+.btn-secondary:focus {
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.3);
+}
+
+/* Skeleton loading para melhor UX */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 25%,
+        #e0e0e0 50%,
+        #f0f0f0 75%
+    );
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Melhoria visual dos scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark);
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .whatsapp-float,
+    .cart-sidebar {
+        display: none;
+    }
+}

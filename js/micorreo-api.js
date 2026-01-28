@@ -1,6 +1,6 @@
 // ============================================
 // API MICORREO - CORREO ARGENTINO
-// Cotización Real de Envíos
+// Cotización Real de Envíos com CREDENCIAIS REAIS
 // ============================================
 
 const MICORREO_CONFIG = {
@@ -10,30 +10,30 @@ const MICORREO_CONFIG = {
         prod: 'https://api.correoargentino.com.ar/micorreo/v1'
     },
     
-    // Usar ambiente TEST por padrão até ter credenciais de produção
-    environment: 'test',
+    // PRODUÇÃO
+    environment: 'prod',
     
-    // Credenciais (solicitar ao Correo Argentino)
-    // IMPORTANTE: Em produção, essas credenciais devem estar no BACKEND
-    // Nunca exponha credenciais no frontend!
+    // ✅ CREDENCIAIS REAIS DO CLIENTE
     credentials: {
-        user: 'SEU_USER',        // Solicitar ao Correo
-        password: 'SEU_PASSWORD', // Solicitar ao Correo
-        customerId: 'SEU_CUSTOMER_ID' // Seu ID de cliente
+        user: 'zoeveos@protonmail.com',
+        password: 'zoe134679',
+        customerId: '0001800815'
     },
     
-    // Configuração de origem (sua loja em Córdoba)
+    // Configuração de origem (Río Primero, Córdoba)
     origin: {
         postalCode: '5127',
-        city: 'Córdoba',
+        city: 'Río Primero',
         province: 'X',
         provinceName: 'Córdoba'
     },
     
-    // Configuração de cache de token
-    tokenCache: {
-        token: null,
-        expiresAt: null
+    // Dimensões padrão dos produtos (20x20x20cm, ~1kg)
+    defaultDimensions: {
+        weight: 1000,  // 1kg em gramas
+        height: 20,
+        width: 20,
+        length: 20
     }
 };
 
